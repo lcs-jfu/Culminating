@@ -29,6 +29,8 @@ let p = Pen(drawingUpon: canvas)
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
 
+
+
 /*:
  ## Optional code
  
@@ -58,20 +60,20 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// Draw a square
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+turtle.setPenColor(to: .black)
+turtle.setPenSize(to: 1)
+turtle.goToHome()
+turtle.penDown()
+for _ in 1...4 {
+    turtle.forward(steps: 100)
+    turtle.left(by: 90)
+    turtle.currentHeading()
+    turtle.currentPosition()
+}
 
-// Go back to origin
-p.goToOrigin()
 
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
 
 /*:
  ## Show the Live View
