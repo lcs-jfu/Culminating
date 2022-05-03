@@ -293,66 +293,15 @@ func drawArrow() {
     turtle.penDown()
 }
 
-for x in stride(from: 10, through: 630, by: 105){
-    drawArrow()}
-turtle.penUp()
-turtle.setPosition(to: Point(x: 135, y: 0))
-for s in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
+for _ in 1...6 {
+    for x in 1...6 {
+        drawArrow()
+    }
+    
+    // Move to the new column's start position
+    turtle.penUp()
+    turtle.forward(steps: 90)
+
 }
-turtle.penUp()
-turtle.setPosition(to: Point(x: 225, y: 0))
-for a in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
-}
-turtle.penUp()
-turtle.setPosition(to: Point(x: 315, y: 0))
-for a in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
-}
-turtle.penUp()
-turtle.setPosition(to: Point(x: 405, y: 0))
-for a in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
-}
-turtle.penUp()
-turtle.setPosition(to: Point(x: 495, y: 0))
-for a in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
-}
-turtle.penUp()
-turtle.setPosition(to: Point(x: 585, y: 0))
-for a in 1...6{
-    for x in stride(from: 0, through: 630, by: 105){
-        drawArrow()}
-}
-
-
-
-
-
-
-
- 
 
 canvas.highPerformance = false
-/*:
- ## Show the Assistant Editor
- Don't see any results?
- 
- Remember to show the Assistant Editor (1), and then switch to Live View (2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
