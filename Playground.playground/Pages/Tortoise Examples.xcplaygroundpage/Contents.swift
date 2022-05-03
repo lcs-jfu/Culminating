@@ -9,8 +9,9 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
  */
-let preferredWidth = 500
-let preferredHeight = 500
+let preferredWidth = 630
+let preferredHeight = 630
+
 /*:
  ## Required code
  
@@ -36,6 +37,7 @@ To use the Tortoise abstraction, just create an instance of the Tortoise class, 
 
 // Create a turtle that will draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
+canvas.drawAxes(withScale: true, by: 30, color: .black)
 
 //// Draw a square
 //turtle.penUp()
@@ -239,73 +241,106 @@ let turtle = Tortoise(drawingUpon: canvas)
 //    turtle.left(by: 45)
 //    turtle.drawSelf()
 //}
+canvas.highPerformance = true
 
-// wheres the turtle
-turtle.penUp()
+// functions statements
 let diagonal = (sqrt(30*30+30*30)*1.5)
-turtle.setPosition(to: Point(x: 50, y: 0))
+turtle.penUp()
+turtle.setPosition(to: Point(x: 45, y: 0))
 turtle.penDown()
 turtle.right(by: 225)
 
-turtle.forward(steps: Int(diagonal))
-turtle.right(by: 135)
-turtle.forward(steps: 30)
-turtle.left(by: 90)
-turtle.forward(steps: 60)
-turtle.right(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 90)
-turtle.forward(steps: 60)
-turtle.left(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 135)
-turtle.forward(steps: Int(diagonal))
+func drawArrow() {
+    
+    //Where are we
+    turtle.drawSelf()
+    turtle.currentHeading()
+    turtle.currentPosition()
+
+    turtle.forward(steps: Int(diagonal))
+    turtle.right(by: 135)
+    turtle.forward(steps: 30)
+    turtle.left(by: 90)
+    turtle.forward(steps: 60)
+    turtle.right(by: 90)
+    turtle.forward(steps: 30)
+    turtle.right(by: 90)
+    turtle.forward(steps: 60)
+    turtle.left(by: 90)
+    turtle.forward(steps: 30)
+    turtle.right(by: 135)
+    turtle.forward(steps: Int(diagonal))
+    turtle.penUp()
+    turtle.right(by: 135)
+    turtle.forward(steps: 105)
+    turtle.left(by: 45)
+
+    let oldHeading = turtle.currentHeading()
+    turtle.setHeading(to: 0)
+    turtle.penUp()
+    turtle.backward(steps: 1)
+    turtle.penDown()
+    turtle.setHeading(to: oldHeading)
+
+
+    //Where are we
+    turtle.drawSelf()
+    turtle.currentHeading()
+    turtle.currentPosition()
+
+
+
+    turtle.penDown()
+}
+
+for x in stride(from: 10, through: 630, by: 105){
+    drawArrow()}
 turtle.penUp()
-turtle.right(by: 135)
-turtle.forward(steps: 105)
-turtle.left(by: 45)
-
-
-
-turtle.penDown()
-turtle.forward(steps: Int(diagonal))
-turtle.right(by: 135)
-turtle.forward(steps: 30)
-turtle.left(by: 90)
-turtle.forward(steps: 60)
-turtle.right(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 90)
-turtle.forward(steps: 60)
-turtle.left(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 135)
-turtle.forward(steps: Int(diagonal))
+turtle.setPosition(to: Point(x: 135, y: 0))
+for s in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
 turtle.penUp()
-turtle.right(by: 135)
-turtle.forward(steps: 105)
-turtle.left(by: 45)
-
-turtle.penDown()
-turtle.forward(steps: Int(diagonal))
-turtle.right(by: 135)
-turtle.forward(steps: 30)
-turtle.left(by: 90)
-turtle.forward(steps: 60)
-turtle.right(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 90)
-turtle.forward(steps: 60)
-turtle.left(by: 90)
-turtle.forward(steps: 30)
-turtle.right(by: 135)
-turtle.forward(steps: Int(diagonal))
+turtle.setPosition(to: Point(x: 225, y: 0))
+for a in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
 turtle.penUp()
-turtle.right(by: 135)
-turtle.forward(steps: 105)
-turtle.left(by: 45)
+turtle.setPosition(to: Point(x: 315, y: 0))
+for a in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
+turtle.penUp()
+turtle.setPosition(to: Point(x: 405, y: 0))
+for a in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
+turtle.penUp()
+turtle.setPosition(to: Point(x: 495, y: 0))
+for a in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
+turtle.penUp()
+turtle.setPosition(to: Point(x: 585, y: 0))
+for a in 1...6{
+    for x in stride(from: 0, through: 630, by: 105){
+        drawArrow()}
+}
 
 
+
+
+
+
+
+ 
+
+canvas.highPerformance = false
 /*:
  ## Show the Assistant Editor
  Don't see any results?
