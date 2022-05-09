@@ -43,8 +43,7 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -65,13 +64,64 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 turtle.setPenColor(to: .black)
 turtle.setPenSize(to: 1)
 turtle.goToHome()
-turtle.penDown()
-for _ in 1...4 {
-    turtle.forward(steps: 100)
-    turtle.left(by: 90)
-    turtle.currentHeading()
-    turtle.currentPosition()
+turtle.currentPosition()
+turtle.currentHeading()
+extension Float {
+    func toDegrees() -> Degrees {
+        return Degrees(self * 180.0 / Float.pi)
+    }
 }
+
+
+let angle = atan(10.0/20.0).toDegrees()
+let length = sqrt(100+400)
+let secangle = (180-angle-90)
+let trdangle = (180-secangle*2)
+
+
+
+turtle.penUp()
+turtle.forward(steps: 30)
+turtle.left(by: 90)
+turtle.right(by: angle)
+turtle.penDown()
+turtle.currentPosition()
+turtle.currentHeading()
+turtle.forward(steps: 22)
+turtle.currentPosition()
+turtle.currentHeading()
+turtle.right(by: secangle)
+turtle.left(by: angle)
+turtle.forward(steps: 22)
+turtle.left(by: secangle*2)
+turtle.forward(steps: 22)
+turtle.right(by: secangle)
+turtle.left(by: angle)
+turtle.forward(steps: 22)
+turtle.left(by: secangle*2)
+turtle.forward(steps: 22)
+turtle.right(by: secangle)
+turtle.left(by: angle)
+turtle.forward(steps: 22)
+turtle.left(by: secangle*2)
+turtle.forward(steps: 22)
+turtle.right(by: secangle)
+turtle.left(by: angle)
+turtle.forward(steps: 22)
+turtle.penUp()
+turtle.setHeading(to: 90)
+turtle.forward(steps: 60)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
