@@ -79,42 +79,50 @@ let secangle = (180-angle-90)
 let trdangle = (180-secangle*2)
 
 
-
+canvas.highPerformance = true
 turtle.penUp()
 turtle.forward(steps: 30)
 turtle.left(by: 90)
-turtle.right(by: angle)
-turtle.penDown()
-turtle.currentPosition()
-turtle.currentHeading()
-turtle.forward(steps: 22)
-turtle.currentPosition()
-turtle.currentHeading()
-turtle.right(by: secangle)
-turtle.left(by: angle)
-turtle.forward(steps: 22)
-turtle.left(by: secangle*2)
-turtle.forward(steps: 22)
-turtle.right(by: secangle)
-turtle.left(by: angle)
-turtle.forward(steps: 22)
-turtle.left(by: secangle*2)
-turtle.forward(steps: 22)
-turtle.right(by: secangle)
-turtle.left(by: angle)
-turtle.forward(steps: 22)
-turtle.left(by: secangle*2)
-turtle.forward(steps: 22)
-turtle.right(by: secangle)
-turtle.left(by: angle)
-turtle.forward(steps: 22)
-turtle.penUp()
-turtle.setHeading(to: 90)
-turtle.forward(steps: 60)
+
+func drawstar(){
+    turtle.right(by: angle)
+    turtle.penDown()
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.forward(steps: 22)
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.right(by: secangle)
+    turtle.left(by: angle)
+    turtle.forward(steps: 22)
+    turtle.left(by: secangle*2)
+    turtle.forward(steps: 22)
+    turtle.right(by: secangle)
+    turtle.left(by: angle)
+    turtle.forward(steps: 22)
+    turtle.left(by: secangle*2)
+    turtle.forward(steps: 22)
+    turtle.right(by: secangle)
+    turtle.left(by: angle)
+    turtle.forward(steps: 22)
+    turtle.left(by: secangle*2)
+    turtle.forward(steps: 22)
+    turtle.right(by: secangle)
+    turtle.left(by: angle)
+    turtle.forward(steps: 22)
+    turtle.penUp()
+    turtle.setHeading(to: 90)
+    turtle.forward(steps: 60)
+}
+
+for _ in 1...10{
+    
+        drawstar()
+    
+}
 
 
-
-
+canvas.highPerformance = false
 
 
 
