@@ -57,38 +57,62 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+// Begin writing your code below
 
-// Draw a square
-
+//starting point
 turtle.setPenColor(to: .black)
 turtle.setPenSize(to: 1)
 turtle.goToHome()
 turtle.currentPosition()
 turtle.currentHeading()
+
+//degrees used (angle)
 extension Float {
     func toDegrees() -> Degrees {
         return Degrees(self * 180.0 / Float.pi)
     }
 }
 
-
 let angle = atan(10.0/20.0).toDegrees()
 let length = sqrt(100+400)
 let secangle = (180-angle-90)
 let trdangle = (180-secangle*2)
-
-
+ 
+//high performance on
 canvas.highPerformance = true
+
+//move to first starting point
+
 turtle.penUp()
 turtle.forward(steps: 30)
 turtle.left(by: 90)
 
+//function for my fill square
+func FillSq() {
+
+    for _ in 1...10{
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 20)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90)
+        turtle.currentHeading()
+        turtle.currentPosition()
+    }
+    
+}
+
+//funtions for my star
 func drawstar(){
+    
+    //down angle right line created
     turtle.right(by: angle)
     turtle.penDown()
-    turtle.currentPosition()
-    turtle.currentHeading()
+    
+    //right angle created
     turtle.forward(steps: 22)
     turtle.currentPosition()
     turtle.currentHeading()
@@ -96,35 +120,101 @@ func drawstar(){
     turtle.left(by: angle)
     turtle.forward(steps: 22)
     turtle.left(by: secangle*2)
+    
+    //top angle created
     turtle.forward(steps: 22)
     turtle.right(by: secangle)
     turtle.left(by: angle)
     turtle.forward(steps: 22)
     turtle.left(by: secangle*2)
+    
+    //left angle created
     turtle.forward(steps: 22)
     turtle.right(by: secangle)
     turtle.left(by: angle)
     turtle.forward(steps: 22)
     turtle.left(by: secangle*2)
+    
+    // down angle left line create
     turtle.forward(steps: 22)
     turtle.right(by: secangle)
     turtle.left(by: angle)
     turtle.forward(steps: 22)
+    
+    //prepare for next star
     turtle.penUp()
     turtle.setHeading(to: 90)
     turtle.forward(steps: 60)
+    
+   //fill square
+    
+    turtle.right(by: 180)
+    turtle.forward(steps: 40)
+    turtle.setHeading(to: 180)
+    turtle.forward(steps: 10)
+    
+    turtle.setHeading(to: 0)
+    turtle.penDown()
+    FillSq()
+    turtle.penUp()
+    //prepare for next star
+    turtle.setHeading(to: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    turtle.forward(steps: 10)
+    turtle.setHeading(to: 90)
+    
 }
 
-for _ in 1...10{
-    
-        drawstar()
-    
-}
-
-
+//loops for 100 star
+//for _ in 1...10{
+//    //loops for one row 10 stars
+//    for _ in 1...10{
+//
+//            drawstar()
+//
+//    }
+//    //after one row going to next row
+//    turtle.penUp()
+//    turtle.right(by: 90)
+//    turtle.forward(steps: 60)
+//    turtle.right(by: 90)
+//    turtle.forward(steps: 600)
+//    turtle.left(by: 180)
+//}
 canvas.highPerformance = false
 
+let angle1 = atan(20.0/10.0).toDegrees()
 
+drawstar()
+turtle.setHeading(to: 0)
+turtle.right(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+turtle.forward(steps: 10)
+turtle.currentHeading()
+turtle.currentPosition()
+turtle.setHeading(to: 0)
+turtle.penDown()
+
+turtle.setHeading(to: angle1)
+turtle.forward(steps: 20)
+turtle.right(by: angle1*2)
+turtle.currentHeading()
+turtle.currentPosition()
+turtle.forward(steps: 1)
+
+
+
+
+
+
+
+
+
+   
+  
+    
 
 
 
