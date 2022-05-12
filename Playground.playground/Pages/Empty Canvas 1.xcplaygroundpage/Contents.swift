@@ -197,13 +197,194 @@ turtle.currentPosition()
 turtle.setHeading(to: 0)
 turtle.penDown()
 
-turtle.setHeading(to: angle1)
-turtle.forward(steps: 20)
-turtle.right(by: angle1*2)
-turtle.currentHeading()
-turtle.currentPosition()
-turtle.forward(steps: 1)
 
+// fill triangle
+
+func filltriangle(){
+    
+
+var stepsLeft = 20
+turtle.left(by: angle1)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+    turtle.currentHeading()
+    turtle.currentPosition()
+}
+
+filltriangle()
+
+turtle.currentPosition()
+turtle.currentHeading()
+turtle.penUp()
+turtle.goToHome()
+turtle.forward(steps: 40)
+turtle.left(by: 90)
+turtle.forward(steps: 40)
+turtle.penDown()
+turtle.right(by: 180)
+filltriangle()
+
+turtle.currentPosition()
+turtle.currentHeading()
+turtle.penUp()
+turtle.goToHome()
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.penDown()
+filltriangle()
+
+turtle.penUp()
+turtle.goToHome()
+turtle.forward(steps: 40)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.right(by: 270)
+turtle.penDown()
+filltriangle()
 
 
 
