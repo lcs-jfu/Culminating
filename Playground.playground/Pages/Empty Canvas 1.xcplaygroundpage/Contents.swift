@@ -182,7 +182,7 @@ func drawstar(){
 //    turtle.forward(steps: 600)
 //    turtle.left(by: 180)
 //}
-canvas.highPerformance = false
+canvas.highPerformance = true
 
 let angle1 = atan(20.0/10.0).toDegrees()
 
@@ -354,38 +354,57 @@ turtle.forward(steps: stepsLeft)
     turtle.currentPosition()
 }
 
-filltriangle()
-
 turtle.currentPosition()
 turtle.currentHeading()
-turtle.penUp()
-turtle.goToHome()
-turtle.forward(steps: 40)
+filltriangle()
+turtle.currentHeading()
+turtle.right(by: turtle.currentHeading())
+turtle.currentHeading()
+turtle.currentPosition()
+turtle.backward(steps: 17)
+turtle.currentPosition()
+turtle.right(by: 90)
+turtle.backward(steps: 6)
+turtle.currentPosition()
+
+
 turtle.left(by: 90)
-turtle.forward(steps: 40)
-turtle.penDown()
+turtle.forward(steps: 20)
+turtle.right(by: 90)
+filltriangle()
+turtle.currentPosition()
+turtle.currentHeading()
+turtle.right(by: turtle.currentHeading())
+turtle.currentHeading()
+
+turtle.backward(steps: 13)
+turtle.currentPosition()
+turtle.left(by: 90)
+turtle.forward(steps: 17)
+turtle.currentPosition()
 turtle.right(by: 180)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.forward(steps: 20)
+turtle.left(by: 180)
+turtle.currentPosition()
 filltriangle()
 
 turtle.currentPosition()
 turtle.currentHeading()
-turtle.penUp()
-turtle.goToHome()
+turtle.right(by: turtle.currentHeading())
+turtle.currentHeading()
+turtle.forward(steps: 16)
+turtle.currentPosition()
+turtle.right(by: 90)
+turtle.forward(steps: 6)
+turtle.currentPosition()
+turtle.right(by: 90)
 turtle.forward(steps: 20)
-turtle.left(by: 90)
-turtle.forward(steps: 20)
-turtle.penDown()
+turtle.currentPosition()
+turtle.right(by: 90)
 filltriangle()
-
-turtle.penUp()
-turtle.goToHome()
-turtle.forward(steps: 40)
-turtle.left(by: 90)
-turtle.forward(steps: 20)
-turtle.right(by: 270)
-turtle.penDown()
-filltriangle()
-
+canvas.highPerformance = false
 
 
 
