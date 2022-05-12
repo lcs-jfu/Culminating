@@ -59,14 +59,14 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below
 
-//starting point
+//Starting Point
 turtle.setPenColor(to: .black)
 turtle.setPenSize(to: 1)
 turtle.goToHome()
 turtle.currentPosition()
 turtle.currentHeading()
 
-//degrees used (angle)
+//Degrees Used (angle)
 extension Float {
     func toDegrees() -> Degrees {
         return Degrees(self * 180.0 / Float.pi)
@@ -78,17 +78,240 @@ let length = sqrt(100+400)
 let secangle = (180-angle-90)
 let trdangle = (180-secangle*2)
 let angle1 = atan(20.0/10.0).toDegrees()
-//high performance on
+
+//High Performance On
 canvas.highPerformance = true
 
-//move to first starting point
-
+//Move To First Starting Point
 turtle.penUp()
 turtle.forward(steps: 30)
 turtle.left(by: 90)
 turtle.currentHeading()
 
-//function for my fill square
+//Function For One Triangle
+func filltriangle(){
+    
+//Setting varible
+var stepsLeft = 20
+    
+//Starting first line
+turtle.left(by: angle1)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+stepsLeft = stepsLeft - 1
+
+turtle.left(by: angle+90)
+turtle.currentHeading()
+turtle.forward(steps: 1)
+turtle.left(by: 90-angle)
+turtle.forward(steps: stepsLeft)
+
+turtle.right(by: angle1*2)
+turtle.forward(steps: 1)
+turtle.right(by: 180-angle1*2)
+turtle.forward(steps: stepsLeft)
+
+    turtle.currentHeading()
+    turtle.currentPosition()
+}
+
+//Function For Filling Four Triangles
+func FillFourCorner() {
+    
+    // Top Triangle
+    filltriangle()
+    
+    //Move To Starting Point
+    turtle.currentHeading()
+    turtle.right(by: turtle.currentHeading())
+    turtle.currentHeading()
+    turtle.currentPosition()
+    turtle.backward(steps: 17)
+    turtle.currentPosition()
+    turtle.right(by: 90)
+    turtle.backward(steps: 6)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.right(by: 90)
+    
+    //Right Triangle
+    filltriangle()
+    
+    //Move to Starting point
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.right(by: turtle.currentHeading())
+    turtle.currentHeading()
+    turtle.backward(steps: 13)
+    turtle.currentPosition()
+    turtle.left(by: 90)
+    turtle.forward(steps: 17)
+    turtle.currentPosition()
+    turtle.right(by: 180)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 180)
+    turtle.currentPosition()
+    
+    //Bottom Triangle
+    filltriangle()
+    
+    //Move to Starting Point
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.right(by: turtle.currentHeading())
+    turtle.currentHeading()
+    turtle.forward(steps: 16)
+    turtle.currentPosition()
+    turtle.right(by: 90)
+    turtle.forward(steps: 6)
+    turtle.currentPosition()
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.currentPosition()
+    turtle.right(by: 90)
+    
+    //Left Triangle
+    filltriangle()
+
+    //Move To Starting Point For Next Star
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.right(by: turtle.currentHeading())
+    turtle.forward(steps: 4)
+    turtle.left(by: 90)
+    turtle.forward(steps: 23)
+    turtle.currentPosition()
+}
+
+//Function For My Fill Square
 func FillSq() {
 
     for _ in 1...10{
@@ -106,7 +329,7 @@ func FillSq() {
     
 }
 
-//funtions for my star
+//Funtions For My Star
 func drawstar(){
     
     //down angle right line created
@@ -142,23 +365,22 @@ func drawstar(){
     turtle.left(by: angle)
     turtle.forward(steps: 22)
     
-    //prepare for next star
+    //prepare for filling squares
     turtle.penUp()
     turtle.setHeading(to: 90)
     turtle.forward(steps: 60)
     
-   //fill square
-    
+    //fill square
     turtle.right(by: 180)
     turtle.forward(steps: 40)
     turtle.setHeading(to: 180)
     turtle.forward(steps: 10)
-    
     turtle.setHeading(to: 0)
     turtle.penDown()
     FillSq()
     turtle.penUp()
-    //prepare for next star
+    
+    //prepare for fill triangles
     turtle.setHeading(to: 90)
     turtle.forward(steps: 20)
     turtle.right(by: 90)
@@ -176,14 +398,14 @@ func drawstar(){
     turtle.penDown()
     
     FillFourCorner()
+    
+    //To Next Star's Starting point
     turtle.setHeading(to: 90)
     
-    turtle.currentHeading()
-    turtle.currentPosition()
 
 }
 
-//loops for 100 star
+//Loops For 100 Stars
 for _ in 1...10{
     //loops for one row 10 stars
     for _ in 1...10{
@@ -200,230 +422,8 @@ for _ in 1...10{
     turtle.left(by: 180)
 }
 
-// fill triangle
 
-func filltriangle(){
-    
-
-var stepsLeft = 20
-turtle.left(by: angle1)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-stepsLeft = stepsLeft - 1
-
-turtle.left(by: angle+90)
-turtle.currentHeading()
-turtle.forward(steps: 1)
-turtle.left(by: 90-angle)
-turtle.forward(steps: stepsLeft)
-
-turtle.right(by: angle1*2)
-turtle.forward(steps: 1)
-turtle.right(by: 180-angle1*2)
-turtle.forward(steps: stepsLeft)
-
-    turtle.currentHeading()
-    turtle.currentPosition()
-}
-
-
-
-func FillFourCorner() {
-    filltriangle()
-    turtle.currentHeading()
-    turtle.right(by: turtle.currentHeading())
-    turtle.currentHeading()
-    turtle.currentPosition()
-    turtle.backward(steps: 17)
-    turtle.currentPosition()
-    turtle.right(by: 90)
-    turtle.backward(steps: 6)
-    turtle.currentPosition()
-
-
-    turtle.left(by: 90)
-    turtle.forward(steps: 20)
-    turtle.right(by: 90)
-    filltriangle()
-    turtle.currentPosition()
-    turtle.currentHeading()
-    turtle.right(by: turtle.currentHeading())
-    turtle.currentHeading()
-
-    turtle.backward(steps: 13)
-    turtle.currentPosition()
-    turtle.left(by: 90)
-    turtle.forward(steps: 17)
-    turtle.currentPosition()
-    turtle.right(by: 180)
-    turtle.forward(steps: 20)
-    turtle.left(by: 90)
-    turtle.forward(steps: 20)
-    turtle.left(by: 180)
-    turtle.currentPosition()
-    filltriangle()
-
-    turtle.currentPosition()
-    turtle.currentHeading()
-    turtle.right(by: turtle.currentHeading())
-    turtle.currentHeading()
-    turtle.forward(steps: 16)
-    turtle.currentPosition()
-    turtle.right(by: 90)
-    turtle.forward(steps: 6)
-    turtle.currentPosition()
-    turtle.right(by: 90)
-    turtle.forward(steps: 20)
-    turtle.currentPosition()
-    turtle.right(by: 90)
-    filltriangle()
-
-    turtle.currentPosition()
-    turtle.currentHeading()
-    turtle.right(by: turtle.currentHeading())
-
-    turtle.forward(steps: 4)
-    turtle.left(by: 90)
-    turtle.forward(steps: 23)
-    turtle.currentPosition()
-}
-
-
-
-
-
-
-
+//High Performance Off (Finishing point!)
 canvas.highPerformance = false
 
 
