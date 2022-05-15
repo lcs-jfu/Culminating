@@ -46,7 +46,7 @@ PlaygroundPage.current.liveView = canvas
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+// canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 /*:
  ## Add your code
@@ -66,7 +66,7 @@ turtle.goToHome()
 turtle.currentPosition()
 turtle.currentHeading()
 
-//Degrees Used (angle)
+//Measurements 
 extension Float {
     func toDegrees() -> Degrees {
         return Degrees(self * 180.0 / Float.pi)
